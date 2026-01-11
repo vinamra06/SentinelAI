@@ -1,0 +1,254 @@
+/* ===============================
+   GLOBAL & BACKGROUND (FIXED)
+   =============================== */
+
+body {
+  margin: 0;
+  background: #020617;
+  font-family: 'Inter', sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Background grid – locked BEHIND everything */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(34,211,238,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34,211,238,0.03) 1px, transparent 1px);
+  background-size: 80px 80px;
+  z-index: -10;
+  pointer-events: none;
+}
+
+/* ===============================
+   APP ROOT
+   =============================== */
+
+.app {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+}
+
+/* ===============================
+   NAVBAR & HERO
+   =============================== */
+
+.navbar {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.signin {
+  background: transparent;
+  border: 1px solid #22d3ee;
+  color: #22d3ee;
+  padding: 8px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.signin:hover {
+  box-shadow: 0 0 15px rgba(34,211,238,0.6);
+}
+
+/* ===============================
+   HERO
+   =============================== */
+
+.hero {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.hero h1 {
+  font-size: 64px;
+  margin: 0;
+}
+
+.blue { color: #22d3ee; }
+.green { color: #34f5c5; }
+
+.hero p {
+  color: #9ca3af;
+  margin-top: 10px;
+}
+
+/* ===============================
+   MAIN CARD
+   =============================== */
+
+.card {
+  width: 100%;
+  max-width: 1000px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid #1e293b;
+  border-radius: 24px;
+  padding: 40px;
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.left, .right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ===============================
+   UPLOAD
+   =============================== */
+
+.upload-box {
+  border: 2px dashed #22d3ee;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  position: relative;
+  color: #22d3ee;
+  cursor: pointer;
+}
+
+.file-input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* ===============================
+   ANALYZE BUTTON
+   =============================== */
+
+.analyze {
+  margin-top: 20px;
+  background: #22d3ee;
+  color: #020617;
+  border: none;
+  padding: 15px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.analyze:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(34,211,238,0.8);
+}
+
+/* ===============================
+   SCORE
+   =============================== */
+
+.score-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.score-number {
+  font-size: 42px;
+  font-weight: bold;
+  color: #22d3ee;
+  position: absolute;
+}
+
+/* ===============================
+   FEATURE BUTTONS (FIXED)
+   =============================== */
+
+.features {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.features div {
+  padding: 12px 24px;
+  border-radius: 30px;
+  border: 1px solid #22d3ee;
+  color: #22d3ee;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+/* hover glow */
+.features div:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(34,211,238,0.6);
+}
+
+/* active glow */
+.features div.active {
+  background: rgba(34,211,238,0.12);
+  box-shadow: 0 0 25px rgba(34,211,238,0.9);
+}
+
+/* ===============================
+   ISSUES PANEL (STABLE)
+   =============================== */
+
+.issues-panel {
+  width: 100%;
+  max-width: 1000px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid #22d3ee;
+  border-radius: 20px;
+  padding: 30px;
+  position: relative;
+  z-index: 3;
+}
+
+.issues-panel h3 {
+  color: #22d3ee;
+  margin-top: 0;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.issue-list {
+  list-style: none;
+  padding: 0;
+}
+
+.issue-list li {
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+.bullet {
+  margin-right: 10px;
+}
+
+.ai-insight {
+  display: block;
+  color: #9ca3af;
+  font-size: 13px;
+  margin-top: 4px;
+}
